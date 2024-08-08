@@ -1,57 +1,51 @@
 # UML
 
-UML (**U**nified **M**odeling **L**anguage) est un langage de modélisation graphique normalisée. 
-Son but est de permettre la représentation d'éléments, d'interactions et de processus dans de nombreux domaines, en particulier dans le développement logiciel orienté objet.
+UML (**U**nified **M**odeling **L**anguage) est un langage de modélisation graphique normalisé.
+
+Son but est de permettre la représentation d'éléments, d'interactions et de processus dans de nombreux domaines, en particulier dans le développement logiciel orienté objets.
 
 [Lien sur le site officiel ](https://www.uml.org)
 
 
-Ce langage, utilisé à l'EMF et adopté par de nombreuses entreprises, nous permet de "représenter, modéliser" le fonctionnement et l'architecture attendue d'un logiciel, avant d'écrire le code. Attention la réalisation d'un diagramme UML en code peut s'effectuer en différents languages de programmation. Donc UML s'attarde sur des représentations générales (notion d'abstraction) et non sur des spécificités propres à chaque language.
+Ce langage, utilisé à l'EMF et adopté par de nombreuses entreprises, nous permet de "représenter, modéliser" le fonctionnement et l'architecture attendue d'un logiciel, avant d'en écrire le code.
 
-Avec UML, il faut garder en tête que chaque diagramme éclaire un partie du sujet. Ils sont donc complémentaires afin d'obtenir une représentation la plus précise possible. 
+Attention la réalisation d'un diagramme UML en code peut s'effectuer en différents languages de programmation. Donc UML s'attarde sur des représentations générales (notion d'abstraction) et non sur des spécificités propres à chaque language.
 
+La norme UML connaît 14 différents types de diagrammes. Il faut garder à l'esprit que chacun des diagrammes éclairera un partie spécifique du sujet (de quoi est composé le logiciel, comment ces parties communiquent-elles ensemble, etc.). Ces diagrammes sont donc complémentaires afin d'obtenir une représentation la plus précise possible de la solution technique décrite.
 
-Voici les diagrammes courrants utilisés à l'EMF lors de chaque phase de développement d'un logiciel :
+Voici les diagrammes utilisés à l'EMF lors de chaque phase de développement d'un logiciel :
 
-| `Phase de développement`                                     | `Diagrammes`                     | 
+| Phase de développement | Diagrammes |
 |---------------------------------------|--------------------------------|
-|ANALYSE            |Use Case Diagram                |     
-|          |Activity Diagram            |         
-|          |Sequence System Diagram            |          
-|CONCEPTION            |Class Diagram                |     
-|                      |Object Diagram  
-|                      |Sequence Interaction Diagram            |         
-|IMPLEMENTATION            |Deployement Diagram                |     
-|          |Class Diagram (reverse engineering)            |                          
+|ANALYSE            |Use Case Diagram                |
+|          |Activity Diagram            |
+|          |Sequence System Diagram           |
+|CONCEPTION            |Class Diagram                |
+|                      |State Diagram             |
+|                      |Sequence Diagram             |
+|                      |Database Diagram            |
+|IMPLEMENTATION            |Class Diagram (reverse engineering)            |
+|                      | |
 
+Dans ce module, nous allons voir en détail comment créer un diagramme de classes et un diagramme de séquence avec les outils :
 
+- Entreprise Architect (EA)
+- [Mermaid](THEORIE_4-UML-Mermaid.md)
 
+## Tutorial Entreprise Architect (EA)
 
-
-Dans ce module, nous allons voir en détail comment créer un diagramme de classe et un diagramme de séquence, avec l'outils Entreprise Architect ainsi qu'avec [Mermaid](THEORIE_4-UML-Mermaid.md).
-
-
-
-
-
-# Tutorial Entreprise Architect (EA)
-
-Ce tutoriel vous explique l'utilisation de logiciel Entreprise Architecte pour la création de diagrammes UML. 
+Ce tutoriel vous explique l'utilisation de logiciel Entreprise Architecte pour la création de diagrammes UML.
 
 UML et EA distinguent les diagrammes de structure et de comportement.
 
-
-| `Catégories`                                     | `Diagrammes`                     | 
+| Catégories                                     | Diagrammes                     |
 |---------------------------------------|--------------------------------|
-|STRUCTURAL          |Class Diagram                |     
-|                   |Object Diagram            |         
-|BEHAVIORAL            |Use case Diagram                |     
-|                      |Activity Diagram  
-|                      |Sequence Diagram            |         
-   
-
-
-
+|STRUCTURAL          |Class Diagram                |
+|                   |Object Diagram            |
+|BEHAVIORAL            |Use case Diagram                |
+|                      |Activity Diagram |
+|                      |Sequence Diagram            |
+|                      |            |
 
 ## Prérequis
 
@@ -61,20 +55,25 @@ Suivre toutes les instruction du document ci-après:
 
 - S:\EMF\ProgramSources\EMF-Informatique\Entreprise Architect\V16 EMF\licence\ **EMF Enterprise Architect Academic Site License PEF.pdf**
 
+`ATENTION : S N'EXISTE PLUS !!!`  
+`ATENTION : S N'EXISTE PLUS !!!`  
+`ATENTION : S N'EXISTE PLUS !!!`  
+`ATENTION : S N'EXISTE PLUS !!!`  
+
 
 ### Customisation de l'interface de EA
 
 Afin d'aléger le nombre de fonctionnalités disponibles, effectuez ces réglages:
 
-#### Customisation par l'onglet Specialize 
+#### Customisation par l'onglet Specialize
 
-Ne conserver que les éléments indiqués 
+Ne conserver que les éléments indiqués
 
 ![EA_Specialize_MA_1](doc/img/EA_Specialize_MA_1.png)
 
-#### Customisation par l'onglet Start 
+#### Customisation par l'onglet Start
 
-Dans le sous-menu Perspective, effectuez ces réglages afin de limiter les différentes perspectives disponibles 
+Dans le sous-menu Perspective, effectuez ces réglages afin de limiter les différentes perspectives disponibles
 
 ![EA_Start_Perspective_1](doc/img/EA_Start_Perspective_1.png)
 
@@ -120,7 +119,7 @@ Vous sélectionnez votre espace de travail de la manière suivante:
     ![alt text](doc/img/EA_Projet_3.png)
 
 - Résultat
- 
+
     ![alt text](doc/img/EA_Projet_4.png)
 
 - Créez ensuite des sous-répertoires pour les différents diagrammes, en utilisant la fonction contextuelle `add a Package`. Résultat :
@@ -151,7 +150,7 @@ Voici un rappel des différentes relations selon la norme UML
 ![UML_Relations_1](doc/img/UML_Relations_1.png)
 
 
-Attention, ce n'est pas parce que la composition n'est pas parfaitement réalisable en java qu'il ne faut pas l'utiliser dans les diagrammes UML. 
+Attention, ce n'est pas parce que la composition n'est pas parfaitement réalisable en java qu'il ne faut pas l'utiliser dans les diagrammes UML.
 UML donne les intentions de développement et il est pertinent d'utiliser la composition lorsqu'une classe n'a pas de sens en dehors de son conteneur.
 
 

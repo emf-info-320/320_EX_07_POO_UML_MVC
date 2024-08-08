@@ -1,19 +1,25 @@
 # Tutorial Mermaid
 
 ## Introduction
-Mermaid est un langage de balisage qui vous permet de générer des diagrammes et des visualisations dynamiques à partir de texte. C'est un outil puissant pour créer des diagrammes de classe, des diagrammes de séquence, des organigrammes, et bien plus encore. Dans ce tutoriel, nous allons apprendre uniquement à créer un diagramme de classe simple avec Mermaid.
 
+Mermaid est un langage de balisage qui vous permet de générer des diagrammes et des visualisations dynamiques à partir de texte. C'est un outil très puissant pour créer de très nombreux types de diagrammes comme les diagrammes de classe, les diagrammes de séquence, mais aussi des organigrammes, et bien plus encore.
+
+En cas d'intérêt, vous trouverez toutes les subtilités et dernières possibilités de ce langage évoluant très vite ici : [Site officiel de Mermaid](https://mermaid.js.org/intro/).
+
+Dans le tutoriel ci-dessous, nous allons apprendre uniquement à créer un diagramme de classe simple avec Mermaid.
 
 ## Prérequis
 
 Nous allons intégrer un diagramme de classe Mermaid dans un fichier Markdown. Il est nécessaire d'installer une extension sur Visual Studio Code pour visualiser les diagrammes Mermaid dans les fichier Markdown.
 
-Voici une extension courrante: 
+Voici une extension courrante:
+
 - Markdown Preview Mermaid Support
 
 ## Syntax
 
 ### Définir du code Mermaid
+
 Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre diagramme avec ces blocs de code:
 
 ![alt text](doc/img/Mermaid_balises.png)
@@ -29,7 +35,6 @@ Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre d
        - espece      
        + getEspece()  
     }
-
 
 ```mermaid
 
@@ -49,7 +54,6 @@ Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre d
         + seDéplacer() : void
     }
 
-    
 ```mermaid
 
     classDiagram  
@@ -58,7 +62,6 @@ Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre d
         + seDéplacer() : void
     }
 ```
-
 
 ### Déclarer des relations entre classes
 
@@ -74,19 +77,17 @@ Voici les relations supportées en Markdown
 | `--`   | Lien  |
 | `..`   | Lien (Pointillé) |
 
-
-
 #### Aggregation
-    Zoo o--> Animal : contient
 
+    Zoo o--> Animal "0..N" : animaux
 
 #### Héritage
+
     Animal <|-- Mammifere : hérite
 
 #### Implémentation
+
     Animal ..|> Comportement : implémente
-
-
 
 ### Exemple
 
@@ -128,17 +129,13 @@ classDiagram
     Animal <|-- Poisson : hérite
     Animal <|-- Oiseau : hérite
 
-    Zoo o--> Animal : contient
+    Zoo o--> "0..N" Animal : animaux
 
     Animal ..|> Comportement : implémente
 
-
-
-```         
-
+```
 
 ## Diagramme de séquence
-
 
 ### Déclarer un diagramme de séquence avec une ligne de vie d'un objet
 
@@ -172,10 +169,9 @@ classDiagram
 
 ### Créer une condition et des messages
 
-Les mots clés alt/else/end permettent d'insérer un bloc de condition 
+Les mots clés alt/else/end permettent d'insérer un bloc de condition
 
 il est nécessaire d'ajouter le + et - à la suite de la flèche afin de rendre active la ligne de vie, ou d'utiliser le mot clé activate et deactivate.
-
 
     sequenceDiagram
         participant app
@@ -205,7 +201,7 @@ il est nécessaire d'ajouter le + et - à la suite de la flèche afin de rendre 
             forme-->>-app: resultat
         else is null
        
-            app->>+app: messageErreur
+            app->>+app: messageErreur()
             activate app      
             deactivate app
         end       
@@ -213,23 +209,19 @@ il est nécessaire d'ajouter le + et - à la suite de la flèche afin de rendre 
 
 ## Type de messages
 
-
-|`Type`	|`Description`|
+|Type |Description|
 |---------------------------------------|--------------------------------|
-|->>	| ligne avec flèche|
+|->> | ligne avec flèche|
 |->>+| ligne avec flèche et activation de la ligne de vie|
 |->>- |ligne avec flèche et désactivation de la ligne de vie|
-|-->>	| pointillé avec flèche|
+|-->> | pointillé avec flèche|
 |-->>+| pointillé avec flèche et activation de la ligne de vie|
 |-->>-| pointillé avec flèche et désactivation de la ligne de vie|
-
-
 
 # Ressources
 
 Vous trouverez toutes autres informations utiles dans ces ressources:
 
-https://mermaid.js.org/syntax/classDiagram.html
+<https://mermaid.js.org/syntax/classDiagram.html>
 
-https://mermaid.js.org/syntax/sequenceDiagram.html
-
+<https://mermaid.js.org/syntax/sequenceDiagram.html>

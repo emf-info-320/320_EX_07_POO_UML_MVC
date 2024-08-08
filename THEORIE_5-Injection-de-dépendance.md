@@ -6,7 +6,7 @@ C'est une technique dans laquelle un objet reçoit d'autres objets dont il dépe
 
 C'est une notion que vous avez déjà rencontré au cours de ce module, mais nous allons l'aborder en détail.
 
-### Dépendance classique : un objet crée les objets dont il a besoin
+## Dépendance classique : un objet crée les objets dont il a besoin
 
 Pour commencer voici un scénario qui illustre une dépendance:
 
@@ -15,12 +15,14 @@ Imaginons que vous souhaitiez faire peindre votre salon par un peintre professio
 ```java
 
 public class Pinceau {
+
     public String utiliser() {
        return "Utilisation du pinceau";
     }
 }
 
 public class SeauDePeinture {
+
     private String couleur;
 
     public SeauDePeinture(String couleur) {
@@ -33,6 +35,7 @@ public class SeauDePeinture {
 }
 
 public class Peintre {
+
     private Pinceau pinceau;
     private SeauDePeinture seauDePeinture;
 
@@ -47,16 +50,13 @@ public class Peintre {
     }
 }
 
-
 public class App {
+
     public static void main(String[] args) throws Exception {
-            
         Peintre peintre = new Peintre();
         peintre.peindre();
     }
 }
-
-
 ```
 
 **Dans ce cas, pinceau et seauDePeinture sont directement instantiés par peintre. Le coulpage est donc fort.**
@@ -87,26 +87,23 @@ classDiagram
         +main(String[] args)
     }
 
-    Peintre --> Pinceau
-    Peintre --> SeauDePeinture
-    App --> Peintre
+    Peintre o--> "1" Pinceau : pinceau
+    Peintre o--> "1" SeauDePeinture : seauDePeinture
 ```
-
-
-
 
 ## Méthodes d'injection de dépendances
 
 Il existe plusieurs méthodes d'injection de dépendance :
 
-- Injection par constructeur : Les dépendances sont fournies via le constructeur de la classe.
-- Injection par setter : Les dépendances sont fournies via des méthodes setter.
-- Injection par interface : Les dépendances sont injectées via une interface spécifique.
+- Injection par constructeur : les dépendances sont fournies via le constructeur de la classe.
+- Injection par setter : les dépendances sont fournies via des méthodes setter.
+- Injection par interface : les dépendances sont injectées via une interface spécifique.
 
 ### Exemple d'injection de dépendances par constructeur
+
 Dans cette méthode, les dépendances sont passées au constructeur de la classe. Cela garantit que l'objet est correctement initialisé avec toutes ses dépendances dès sa création.
 
-Les classes Pinceau et SceauDePeinture sont identiques à l'exemple précédent.
+Les classes `Pinceau` et `SceauDePeinture` sont identiques à l'exemple précédent.
 
 ```java
 
@@ -141,6 +138,7 @@ public class App {
 ```
 
 ### Exemple d'injection de dépendances par setter
+
 Dans cette méthode, les dépendances sont définies via des méthodes setter après la création de l'objet.
 
 ```java
@@ -179,6 +177,7 @@ public class App {
 ```
 
 ### Exemple d'injection de dépendances par interface
+
 Dans cette méthode, une interface est utilisée pour fournir les dépendances. Cela permet une plus grande flexibilité et facilite les tests.
 
 En premier lieu, voici la définition des interfaces IOutilsDePeinture et IContenantDePeinture, qui apportent un niveau d'abstraction supplémentaire.
@@ -242,7 +241,7 @@ public class SeauDePeinture_IDI implements IContenantDePeinture{
 
 ``` 
 
-Classe Peintre utilisant les objets qui implémentent les interfaces
+Classe `Peintre` utilisant les objets qui implémentent les interfaces
 
 ```java
 
@@ -324,15 +323,16 @@ classDiagram
     IOutilsDePeinture <|.. Pinceau_IDI
     IOutilsDePeinture <|.. Rouleau_IDI
     IContenantDePeinture <|.. SeauDePeinture_IDI
-    Peintre_IDI --> IOutilsDePeinture
-    Peintre_IDI --> IContenantDePeinture
-    App --> Peintre_IDI
 
+    Peintre_IDI o--> "1" IOutilsDePeinture : outils
+    Peintre_IDI o--> "1" IContenantDePeinture : contenantDePeinture
+
+    App ..> Peintre_IDI : << use >>
 
 ```
 
-
 ## Avantages de l'injection de dépendances
+
 - Faible couplage : Les classes sont moins dépendantes les unes des autres.
 - Testabilité : Il est plus facile de tester les classes individuellement.
 - Flexibilité et maintenabilité : Le code est plus modulaire et plus facile à maintenir.
