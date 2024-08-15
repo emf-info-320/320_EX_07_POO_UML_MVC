@@ -55,12 +55,6 @@ Suivre toutes les instruction du document ci-après:
 
 - S:\EMF\ProgramSources\EMF-Informatique\Entreprise Architect\V16 EMF\licence\ **EMF Enterprise Architect Academic Site License PEF.pdf**
 
-`ATENTION : S N'EXISTE PLUS !!!`  
-`ATENTION : S N'EXISTE PLUS !!!`  
-`ATENTION : S N'EXISTE PLUS !!!`  
-`ATENTION : S N'EXISTE PLUS !!!`  
-
-
 ### Customisation de l'interface de EA
 
 Afin d'aléger le nombre de fonctionnalités disponibles, effectuez ces réglages:
