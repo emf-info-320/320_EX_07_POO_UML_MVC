@@ -42,7 +42,7 @@ Ce thème POO est repris ici plus en détails pour vous faire découvrir quelque
 ### Injection de dépendances
 
 - [THEORIE_5-Injection-de-dépendance](THEORIE_5-Injection-de-dépendance.md)
-- [EXERCICE_C-Projet-personel](EXERCICE_C-Projet-personel.md)
+- [EXERCICE_C-Projet-personel](EXERCICE_C-Projet-personnel.md)
 
 ## Ressources
 
