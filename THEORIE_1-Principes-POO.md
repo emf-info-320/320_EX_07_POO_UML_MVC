@@ -87,6 +87,14 @@ Exemples :
 - la méthode `toString()` automatiquement héritée de la classe `Object`, prévue pour être surchargée par tous les objets de nature différente afin de correctement se représenter sous forme de chaîne de caractères.
 - la méthode `calculeNoteFinale()` de la classe `Cours` dont le code nécessaire est de calculer la moyenne des notes obtenues lorsqu'il s'agit de maths, physique, chimie, mais de chercher la note la plus grande lorsqu'il s'agit de modules.
 
+On distingue:
+-  Le polymorphisme ad hoc, qui est une surcharge de fonction, c'est à dire des fonctions de même nom mais de signature différente, en proposant des paramètres différents en type ou/et en nombre.
+  
+-  Le polymorphisme de sous-typage ou héritage, pour lequel des classes qui héritent d'une classe de base en redéfinissent certaines méthodes.
+
+- Le polymorphisme par implémentation d'interface. Les interfaces permettent de définir un "contrat" que les classes doivent respecter.
+ Une classe qui implémente une interface doit fournir des implémentations pour toutes les méthodes déclarées dans l'interface. Par conséquent le comportement de méthodes de cette interface pourra être différent.
+
 ## Le couplage entre classes
 
 Les classes peuvent dépendre les unes des autres. Suivant la difficulté à séparer deux classes, on parlera de couplage faible (souhaitable) ou de couplage fort (moins souhaitable).
