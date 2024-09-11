@@ -87,8 +87,8 @@ classDiagram
         +main(String[] args)
     }
 
-    Peintre o--> "1" Pinceau : pinceau
-    Peintre o--> "1" SeauDePeinture : seauDePeinture
+    Peintre *--> "1" Pinceau : pinceau
+    Peintre *--> "1" SeauDePeinture : seauDePeinture
 ```
 
 ## Méthodes d'injection de dépendances
