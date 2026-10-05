@@ -10,7 +10,7 @@ Le diagramme de classe ci-dessous est le résultat du travail d'un apprenti de 4
 
 Vous devez anlayser de diagramme et trouvez une application de chaque principe POO présenté dans la théorie, selon les instructions décrite dans la réalisation.
 
-Vous décrivez également les aspect qui vous ne semble pas correct par rapport aux standards EMF.
+Vous décrivez également les aspects qui vous ne semble pas correct par rapport aux standards EMF.
 
 ## Projet RoadTrafficSimulation
 
