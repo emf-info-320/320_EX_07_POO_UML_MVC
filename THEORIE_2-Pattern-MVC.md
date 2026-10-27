@@ -7,7 +7,12 @@ Vous avez déjà étudié ce pattern au module D400. Mais nous allons reprendre 
 
 ## Pattern MVC sans utilisation d'interfaces (comme au D400)
 
+Le pattern utilisé à l'EMF est basé sur le modèle MVC (Model View Controller).
+
+Il se compose de quatre types de classe avec les couleurs correspondantes ci-dessous:
+
 <img src="doc/img/MVC_explications.png" alt="Explication MVC" />
+
 <img src="doc/img/MVC_D400_basic.png" alt="Explication MVC" width="600"/>
 
 ### Analyse des principes POO appliqués par ce pattern
@@ -39,7 +44,7 @@ Comme ce schéma UML le montre bien :
 - La classe `Controller` possède un attribut `view` de type `View` afin pouvoir lui demander d'afficher des choses.
 - La classe `View` possède un attribut `controller` de type `Controller` afin de pouvoir communiquer avec son contrôleur, par exemple pour lui dire que l'utilisateur souhaite telle ou telle action (bouton).
 
- On observe un couplage fort entre ces deux classe car elles sont interdépendantes. En effet, dans l'implémentation, chaque classe devra connaître le type de l'autre classe (import) et chaque modification de signatures des méthodes aura un impact sur l'autre classe.
+ On observe un couplage **fort** entre ces deux classe car elles sont interdépendantes. En effet, dans l'implémentation, chaque classe devra connaître le type de l'autre classe (import) et chaque modification de signatures des méthodes aura un impact sur l'autre classe.
 
 #### La réutilisabilité
 

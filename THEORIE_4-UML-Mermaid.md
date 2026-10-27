@@ -51,7 +51,7 @@ Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre d
 
     class Comportement {
         <<interface>>
-        + seDéplacer() : void
+        + seDeplacer() : void
     }
 
 ```mermaid
@@ -59,7 +59,7 @@ Pour utiliser Mermaid dans un document Markdown, il suffit de délimiter votre d
     classDiagram  
     class Comportement {
         <<interface>>
-        + seDéplacer() : void
+        + seDeplacer() : void
     }
 ```
 
@@ -96,17 +96,17 @@ classDiagram
     class Animal {
         - espece : String
         + getEspece() : String
-        + seDéplacer() : void
+        + seDeplacer() : void
     }
 
     class Mammifere {
         - nombrePattes : int
-       + seDéplacer() : void
+       + seDeplacer() : void
     }
 
     class Poisson {
         - typeEau : String
-      + seDéplacer() : void
+      + seDeplacer() : void
     }
 
     class Zoo {
@@ -117,12 +117,12 @@ classDiagram
 
     class Comportement {
         <<interface>>
-        + seDéplacer() : void
+        + seDeplacer() : void
     }
 
     class Oiseau {
         - couleurPlumes : String
-      + seDéplacer() : void
+      + seDeplacer() : void
     }
 
     Animal <|-- Mammifere : hérite
